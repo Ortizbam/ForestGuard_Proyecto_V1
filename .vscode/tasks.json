@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "ForestGuard: iniciar servicios",
+      "type": "shell",
+      "command": "docker compose up --build -d",
+      "problemMatcher": []
+    },
+    {
+      "label": "ForestGuard: ver estado",
+      "type": "shell",
+      "command": "docker compose ps",
+      "problemMatcher": []
+    },
+    {
+      "label": "ForestGuard: ver logs API",
+      "type": "shell",
+      "command": "docker compose logs -f api",
+      "problemMatcher": []
+    },
+    {
+      "label": "ForestGuard: detener servicios",
+      "type": "shell",
+      "command": "docker compose down",
+      "problemMatcher": []
+    }
+  ]
+}

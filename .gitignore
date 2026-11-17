@@ -1,0 +1,9 @@
+.env
+__pycache__/
+*.py[cod]
+*.db
+.venv/
+venv/
+.pending.jsonl
+gateway/pending.jsonl
+.DS_Store

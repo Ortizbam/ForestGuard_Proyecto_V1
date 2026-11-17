@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#064735">
+  <meta name="description" content="Prototipo académico ForestGuard para monitoreo ambiental y alertas tempranas.">
+  <title>ForestGuard | Centro de monitoreo</title>
+  <link rel="icon" href="/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark" aria-hidden="true">FG</div>
+    <div class="brand-copy"><strong>ForestGuard</strong><span>Centro de monitoreo forestal</span></div>
+    <div class="top-status"><span id="connection-dot" class="pulse"></span><span id="connection-label">Conectando...</span></div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <div>
+        <p class="eyebrow">PROTOTIPO DE ALERTA TEMPRANA</p>
+        <h1>Vigilancia de zonas forestales</h1>
+        <p class="muted">Monitoreo ambiental mediante sensores, energía solar y comunicación LoRa.</p>
+      </div>
+      <div class="intro-chip">Cusco · Perú</div>
+    </section>
+
+    <div class="demo-warning"><strong>Modo prototipo:</strong> los nodos y coordenadas de demostración son ficticios. Las alertas requieren verificación humana; esta plataforma no confirma por sí sola la existencia de un incendio.</div>
+
+    <section class="stats-grid" aria-label="Resumen del sistema">
+      <article class="stat-card"><span class="stat-label">Nodos registrados</span><strong id="total-nodes">—</strong><span class="stat-note">Dispositivos configurados</span></article>
+      <article class="stat-card"><span class="stat-label">En línea</span><strong class="green" id="online-nodes">—</strong><span class="stat-note">Mensajes recientes</span></article>
+      <article class="stat-card"><span class="stat-label">Sin comunicación</span><strong class="gray" id="offline-nodes">—</strong><span class="stat-note">Revisar conexión o energía</span></article>
+      <article class="stat-card"><span class="stat-label">Alertas sin atender</span><strong class="red" id="active-alerts">—</strong><span class="stat-note">Requieren verificación</span></article>
+    </section>
+
+    <section class="content-grid">
+      <article class="panel map-panel">
+        <div class="panel-heading"><div><p class="eyebrow">UBICACIÓN</p><h2>Mapa de dispositivos</h2></div><span class="live-tag">Actualización cada 5 s</span></div>
+        <div id="map" role="application" aria-label="Mapa de ubicación de nodos ForestGuard"><p class="map-fallback">Cargando mapa…</p></div>
+        <div class="legend"><span><i class="dot normal"></i>Normal</span><span><i class="dot prealert"></i>Prealerta</span><span><i class="dot alert"></i>Alerta</span><span><i class="dot offline"></i>Sin comunicación</span></div>
+      </article>
+
+      <article class="panel devices-panel">
+        <div class="panel-heading"><div><p class="eyebrow">HARDWARE</p><h2>Estado de los nodos</h2></div><span id="node-count" class="count-pill">0 nodos</span></div>
+        <div class="table-wrap"><table><thead><tr><th>Dispositivo</th><th>Estado</th><th>Batería</th><th>Último mensaje</th></tr></thead><tbody id="devices-body"><tr><td colspan="4" class="empty">Cargando dispositivos...</td></tr></tbody></table></div>
+      </article>
+    </section>
+
+    <section class="bottom-grid">
+      <article class="panel alerts-panel">
+        <div class="panel-heading"><div><p class="eyebrow">EVENTOS</p><h2>Alertas recientes</h2></div><span class="count-pill">Historial</span></div>
+        <div id="alerts-list" class="alerts-list"><p class="empty">Cargando alertas...</p></div>
+      </article>
+      <article class="panel readings-panel">
+        <div class="panel-heading"><div><p class="eyebrow">MEDICIONES</p><h2>Última lectura recibida</h2></div></div>
+        <div id="latest-reading" class="reading-box"><p class="empty">Esperando datos...</p></div>
+        <p class="small-note">La lectura de humo se muestra como valor ADC crudo, no como concentración calibrada. Los estados y umbrales deben validarse antes de cualquier piloto.</p>
+      </article>
+    </section>
+    <footer>ForestGuard · Prototipo académico · Datos de demostración sujetos a reemplazo por mediciones verificadas.</footer>
+  </main>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="/app.js"></script>
+</body>
+</html>

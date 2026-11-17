@@ -1,0 +1,12 @@
+FORESTGUARD — PAQUETE DE PROYECTO
+Versión 0.2.0
+Idioma: español
+Estado: prototipo académico para desarrollo local y pruebas controladas.
+
+Leer primero:
+1) README_ES.md
+2) INICIO_RAPIDO_WINDOWS.md
+3) docs/01_ARQUITECTURA.md
+4) docs/02_CONTRATO_API.md
+
+La aplicación no está conectada a hardware real por defecto. Los nodos sembrados son ficticios.
